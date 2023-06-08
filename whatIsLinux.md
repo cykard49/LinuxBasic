@@ -1,4 +1,4 @@
-- Red Hat has divided Linux on 3 different sections:
+- Red Hat has divided Linux into 3 different parts:
   - Kernel
     - lowest layer
     - manage hardware and interactions with everything
@@ -9,7 +9,7 @@
     - these run a bootloader which is called GRUB2 in linux.
     - this bootloader loads the kernal image
     - the kernel initializes and starts up everything required to run (drivers, software)
-    - its called an image, but it is a compressed file which gets decompressed into memory and run
+    - its called an image, but it is a compressed file which gets decompressed into memory and run 
   - System User Space/ Administrative layer:
     - configuration and software installation happened in this layer
     - includes shell or command interpreter
@@ -23,7 +23,6 @@
     - apps allow to perform task
     - apps can be anything from graphical interface, editors, web servers, DB servers
 
-
 - Distributions:
   - Linux has diffeent Distributions or Distro, which is versions packaged up with assciated software, usually from different companies or groups.
   - example: Ubuntu, Debian, Red Hat, SUSE
@@ -31,13 +30,13 @@
   - All software that comes with that OS can be installed at the same time.
   - Distros can be different, but they all have in common is the kernel itself.
 
-### To check server kernal age, system has been up: ```uptime -p```
+### To check server kernal age, or for how long the system has been up: ```uptime -p```
 
 - Package Manager or methods to install new software, changed depending on the distro.
 - Software is released in packages:
   - Software pckgs available for distro, managed by vendor, consist of multiple files combined into one package for installation using a Package Manager.
-    - To install software in Red Hat, use ```yum``` or ```dnf`` commands.
-    - In Ubuntu or Debian, sue ```apt``` command.
+    - To install software in Red Hat, use ```yum``` or ```dnf``` commands.
+    - In Ubuntu or Debian, use ```apt``` command.
   - Kernel ties it all together.
     - Commong components are supporting system software and libraries.
       - library is a collection of software that is used by computer programs.
@@ -47,7 +46,6 @@
 - Ubuntu Touch: mobile OS by Canonical
 
 - Bloatware: a software a mobile phone provider adds to the phone that most people never use, which slows down the phone and make is less secure.
-
 
 - Hypervisor: There are 2 types of Virtualization:
   - Type 1: physical computer running hypervisor which talks directly to computer's hardware.
@@ -66,4 +64,3 @@
 - Linux is also use with IoT devices.
 - Linux is used on Network routers, gateways, switches, Firewalls.
 - Linux is used in Smart TVs.
-- 
