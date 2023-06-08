@@ -1,3 +1,30 @@
+how to get into the root level:
+  - ```sudo su``` OR ```sudo -s``` :
+    - non-login shell
+    - sets HOME dir to /root
+  - ```sudo -i``` OR ```sudo su -l``` :
+    - login shell
+    - sets HOME dir to /root
+- to ssh: ```ssh username@host/port/IPaddress```
+
+- to create a new user, first get into the root level and type: ```useradd rakasd```
+- to create a new group, get into the root level and type: ```groupadd cloudGroup```
+- to give administrator level access to normal user, use 'wheel': ```usermod -g wheel rakasd```
+- to see what group(s) user is in: ```id rakasd```
+- to add user into a group: ```usermod -aG cloudGroup rakasd```
+- to lock user's account: ```usermod -L rakasd```
+- to create new user from outside of root level: ```sudo useradd -m rakasd```
+- to give admin access to a normal user from outside of root level, assign 'wheel': ```sudo useradd -G wheel -m drkas```
+- to create password for new sudo user: ```sudo passwd rakasd```
+- to verify the /etc/sudoers file will allow the wheel group access to run all cmds with sudo: ```sudo visudo```
+##### NOTE: There should not be comment(#) on this line of file:
+```%wheel ALL=(ALL) ALL```
+
+- to switch to another sudo user use (-) dash: ```sudo su - drkas```
+- to verify you can read the /etc/shadow file form current user: ```cat /etc/shadow```
+  - if you can't access, rerun with sudo: ```sudo cat /etc/shadow```
+  - after verifying new user can read /etc/shadow file, exit out: ```exit``
+
 - Create a new sudoers file in the ```/etc/sudoers.d``` directory that will contain a standalone entry for webmasters: (```-f``` is flag to create a new file)
 ```sudo visudo -f /etc/sudoers.d/web_admin```
 #### If you want to create file in root file and don't have access, use ```sudo visudo <filename>```
@@ -19,18 +46,15 @@
 
 - Attempt to restart the web service:
 ```sudo systemctl restart httpd.service```
-#### If rakasd account asks for password and password is correct, rakasd has access to restart the web service with the sudo command
+##### If rakasd account asks for password and password is correct, rakasd has access to restart the web service with the sudo command
 
 - Try to read the new ```web_admin sudoers``` file:
 ```sudo cat /etc/sudoers.d/web_admin```
 
-- Since the ```cat``` command is not listed in the command alias group for ```WEB, rakasd``` cannot use ```sudo``` to read this file.
+- Since the ```cat``` command is not listed in the command alias group for ```WEB```, ```rakasd``` cannot use ```sudo``` to read this file.
 
 #### Issue: ```/etc/sudoers.d/web_admin busy, try again later```
               - Reference to this weblink: https://www.2daygeek.com/check-find-parent-process-id-pid-ppid-linux/
-
-
-
 
 - Log in to one of the servers (which will then be referred to as server1 throughout the rest of the lab guide) using the credentials provided:
 ```ssh dev@<server1_PUBLIC_IP>```
