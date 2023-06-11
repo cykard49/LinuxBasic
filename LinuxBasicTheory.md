@@ -64,3 +64,13 @@
 - Linux is also use with IoT devices.
 - Linux is used on Network routers, gateways, switches, Firewalls.
 - Linux is used in Smart TVs.
+
+
+- Root User:
+  - High Level of access
+  - has the most access of any user
+  - can run any command or update any file
+  - The best practice is to not use the root user directly
+    - this can be resolved by using ```sudo```
+    - sudo command allows temporarily to raise the normal user permission to root user access
+    - so to update, we use sudo to run updates
